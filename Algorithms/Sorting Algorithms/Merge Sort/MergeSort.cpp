@@ -36,7 +36,8 @@ void MergeSort(vector<int> &list, vector<int> &aux, int lo, int hi)
 
     MergeSort(list, aux, lo, mid);
     MergeSort(list, aux, mid+1, hi);
-    Merge(list, aux, lo, mid, hi);
+    if (list[mid] > list[mid + 1])
+        Merge(list, aux, lo, mid, hi);
 }
 
 void MergeSort(vector<int> &list)
